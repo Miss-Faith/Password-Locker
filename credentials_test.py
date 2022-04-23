@@ -1,5 +1,6 @@
 import unittest
 from credentials import Credentials
+import pyperclip
 
 class TestCredentials(unittest.TestCase):
 
@@ -90,6 +91,16 @@ class TestCredentials(unittest.TestCase):
         '''
 
         self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
+
+    def test_copy_account(self):
+        '''
+        Test to confirm that we are copying the account name from a found credentials
+        '''
+
+        self.new_credentials.save_credentials()
+        Credentials.copy_account("Account")
+
+        self.assertEqual(self.new_credentials.account,pyperclip.paste())
 
 if __name__ == '__main__':
     unittest.main()
