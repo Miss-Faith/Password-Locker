@@ -44,7 +44,7 @@ class TestCredentials(unittest.TestCase):
         test_save_multiple_credentials to check if we can save multiple credentials objects to our credentials_list
         '''
         self.new_credentials.save_credentials()
-        test_credentials = Credentials("Account","user","password") # new credential
+        test_credentials = Credentials("Account","User","Password") # new credential
         test_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),2)
 
@@ -53,7 +53,7 @@ class TestCredentials(unittest.TestCase):
         test_delete_credentials to test if we can remove a credentials from our credentials list
         '''
         self.new_credentials.save_credentials()
-        test_credentials = Credentials("Account","user","password") # new credentials
+        test_credentials = Credentials("Account","User","Password") # new credentials
         test_credentials.save_credentials()
 
         self.new_credentials.delete_credentials()# Deleting a credentials object
@@ -65,7 +65,7 @@ class TestCredentials(unittest.TestCase):
         '''
 
         self.new_credentials.save_credentials()
-        test_credentials = Credentials("Account","user","Password") # new credentials
+        test_credentials = Credentials("Account","User","Password") # new credentials
         test_credentials.save_credentials()
 
         found_credentials = Credentials.find_by_account("Account")
@@ -78,7 +78,7 @@ class TestCredentials(unittest.TestCase):
         '''
 
         self.new_credentials.save_credentials()
-        test_credentials = Credentials("Account","user","password") # new credentials
+        test_credentials = Credentials("Account","User","Password") # new credentials
         test_credentials.save_credentials()
 
         credentials_exists = Credentials.credentials_exist("Account")
@@ -94,13 +94,13 @@ class TestCredentials(unittest.TestCase):
 
     def test_copy_account(self):
         '''
-        Test to confirm that we are copying the account name from a found credentials
+        Test to confirm that we are copying the account credentials from a found credentials
         '''
 
         self.new_credentials.save_credentials()
-        Credentials.copy_account("Account")
+        Credentials.copy_account("GitHub")
 
-        self.assertEqual(self.new_credentials.account,pyperclip.paste())
+        self.assertEqual(self.new_credentials.user_name,pyperclip.paste())
 
 if __name__ == '__main__':
     unittest.main()
