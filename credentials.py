@@ -75,7 +75,7 @@ class Credentials:
         return cls.credentials_list
 
     @classmethod
-    def copy_account_details(cls,account):
+    def copy_account(cls,account):
         credentials_found = Credentials.find_by_account(account)
-        pyperclip.copy(credentials_found.user_name)
-        # pyperclip.copy(credentials_found.password)
+        pyperclip.copy(credentials_found.account)
+
