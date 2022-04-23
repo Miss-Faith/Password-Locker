@@ -92,7 +92,7 @@ class TestCredentials(unittest.TestCase):
 
         self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
 
-    def test_copy_account(self):
+    def test_account(self):
         '''
         Test to confirm that we are copying the account credentials from a found credentials
         '''
@@ -100,7 +100,7 @@ class TestCredentials(unittest.TestCase):
         self.new_credentials.save_credentials()
         Credentials.copy_account("GitHub")
 
-        self.assertEqual(self.new_credentials.user_name,pyperclip.paste())
+        self.assertEqual(self.new_credentials.account,pyperclip.paste())
 
 if __name__ == '__main__':
     unittest.main()
