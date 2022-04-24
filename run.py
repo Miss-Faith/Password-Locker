@@ -1,6 +1,27 @@
 #!/usr/bin/env python3.8
 
 from credentials import Credentials
+from user import User
+
+def create_user(username,userpassword):
+    '''
+    Function to create a new credential
+    '''
+    new_user = User(username,userpassword)
+    return new_user
+
+def save_users(user):
+    '''
+    Function to save user
+    '''
+    user.save_user()
+
+def del_user(user):
+    '''
+    Function to delete a user
+    '''
+    user.delete_user()
+
 
 def create_credentials(account,user,password):
     '''
