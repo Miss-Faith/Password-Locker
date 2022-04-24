@@ -106,13 +106,23 @@ def main():
                 print("Invalid password please try again")
         save_user(create_user(username,userpassword))
         print("*"*85)
-        print(f"Hello {username}, Your account has been created succesfully! Your password is: {userpassword}")
+        print(f"Welcome {username} To PassWord Locker Manager,\n Your account has been created succesfully!\n Your password is: {userpassword}")
         print("*"*85)
 
+    elif short_code == "si":
+        print("*"*50)
+        print("Enter your User name and Password to log in:")
+        print('*' * 50)
+        username = input("User name: ")
+        password = input("password: ")
+        login = login_user(username,userpassword)
+        if login_user == login:
+            print(f"Hello {username}.Welcome To PassWord Locker Manager")  
+            print('\n')
+    while True:
 
 
-
-    print("Hello Welcome to your credentials list. What would you like to do?")
+    print("What would you like to do?")
     print('\n')
 
     while True:
