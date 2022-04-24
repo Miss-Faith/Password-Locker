@@ -1,5 +1,3 @@
-from credentials import Credentials
-
 class User:
     """
     Create User class that generates new instances of a user.
@@ -12,3 +10,11 @@ class User:
         """
         self.username = username
         self.password = userpassword
+
+    def save_user(self):
+
+        '''
+        save_user method saves user objects into user_list
+        '''
+
+        User.user_list.append(self) 
