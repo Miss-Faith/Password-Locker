@@ -86,5 +86,5 @@ class Credentials:
         Generate a random password string of uppercase and lowercase letters, digits and special characters
         """
         password = string.hexdigits + string.punctuation
-        return ''.join(random.choice(password) for i in range(stringLength))
+        return ''.join(random.choice(password) for i in range(passLength))
 
