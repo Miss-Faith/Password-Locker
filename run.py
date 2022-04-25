@@ -1,7 +1,21 @@
 #!/usr/bin/env python3.8
 
 from credentials import Credentials
+from credentials import Password
 from user import User
+
+def create_password(passwordlength):
+    '''
+    Function to create a new password length
+    '''
+    new_password = Password(passwordlength)
+    return new_user
+
+def save_password(password):
+    '''
+    Function to save password length
+    '''
+    password.save_password()
 
 def create_user(username,userpassword):
     '''
@@ -72,7 +86,7 @@ def display_credentials():
     '''
     return Credentials.display_credentials()
 
-def generate_Password():
+def generate_Password(passwordLength):
     '''
     generates a random password for the user.
     '''
@@ -98,7 +112,7 @@ def main():
                 print("Select Password length\n")
                 passwordLength = input().strip()
                 if passwordLength.isnumeric():
-                    userpassword = generate_Password()
+                    userpassword = generate_Password(passwordLength)
                 else:
                     print("Enter a valid Password length\n") 
                 break
