@@ -1,6 +1,23 @@
 import pyperclip
 import random
 import string
+class Password:
+    """
+    Create Password class that generates a new length of a password.
+    """
+    password_list = []
+
+    def __init__(self, passwordLength):
+        """
+        method that defines the properties of a user.
+        """
+        self.passwordLength = passwordLength
+
+    def save_password(self):
+        """
+        A method that saves a new password instace into the password list
+        """
+        Password.user_password.append(self)
 
 class Credentials:
     """
@@ -81,10 +98,10 @@ class Credentials:
         credentials_found = Credentials.find_by_account(account)
         pyperclip.copy(credentials_found.password)
 
-    def generatePassword(passLength=8):
+    def generatePassword(passwordLength):
         """
         Generate a random password string of uppercase and lowercase letters, digits and special characters
         """
         password = string.hexdigits + string.punctuation
-        return ''.join(random.choice(password) for i in range(passLength))
+        return ''.join(random.choice(password) for i in range(int(passwordLength)))
 

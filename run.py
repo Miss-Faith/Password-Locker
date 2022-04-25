@@ -32,7 +32,7 @@ def login_user(username,userpassword):
     """
     function that checks whether a user exist and then login the user in.
     """
-    check_user = User.verify_user(username)
+    check_user = User.verify_user(username,userpassword)
     return check_user
 
 def create_credentials(account,user,password):
@@ -76,7 +76,7 @@ def generate_Password():
     '''
     generates a random password for the user.
     '''
-    auto_password=Credentials.generatePassword()
+    auto_password=Credentials.generatePassword(passwordLength)
     return auto_password
 
 def main():
@@ -123,7 +123,8 @@ def main():
         else:
             print("Invalid password please try again")
 
-    while True:        
+    while True:
+                
         print("What would you like to do?")
         print('\n')
         print("Use these short codes : cc - create a new credentials, dc - display credentials, fc -find a credential, ex -exit the credentials list ")

@@ -65,7 +65,7 @@ class TestUser(unittest.TestCase):
         test_user = User("UserName","UserPassword") # new user
         test_user.save_user()
 
-        found_user = User.verify_user("UserName","UsePassword")
+        found_user = User.verify_user("UserName","UserPassword")
 
         self.assertEqual(found_user.username,test_user.username)
         self.assertEqual(found_user.userpassword,test_user.userpassword)
