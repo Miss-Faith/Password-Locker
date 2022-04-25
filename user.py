@@ -9,7 +9,7 @@ class User:
         method that defines the properties of a user.
         """
         self.username = username
-        self.password = userpassword
+        self.userpassword = userpassword
 
     def save_user(self):
 
@@ -28,7 +28,7 @@ class User:
         User.user_list.remove(self)
 
     @classmethod
-    def verify_user(cls,username):
+    def verify_user(cls,username,userpassword):
         '''
         Method that takes in the user name and returns user user that matches that account.
 
@@ -39,7 +39,7 @@ class User:
         '''
 
         for user in cls.user_list:
-            if user.username == username:
+            if user.username == username and user.userpassword == user.userpassword:
                 return user
 
     @classmethod
@@ -53,7 +53,7 @@ class User:
         '''
         for user in cls.user_list:
             if user.username == username:
-                    return True
+                return True
 
         return False
 

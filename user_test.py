@@ -22,7 +22,7 @@ class TestUser(unittest.TestCase):
         '''
 
         self.assertEqual(self.new_user.username,"Faith")
-        self.assertEqual(self.new_user.password,"*****")
+        self.assertEqual(self.new_user.userpassword,"*****")
 
     def test_save_user(self):
         '''
@@ -61,14 +61,14 @@ class TestUser(unittest.TestCase):
         '''
         test to check if we can find a user by account and display information
         '''
-
         self.new_user.save_user()
         test_user = User("UserName","UserPassword") # new user
         test_user.save_user()
 
-        found_user = User.verify_user("UserName")
+        found_user = User.verify_user("UserName","UsePassword")
 
         self.assertEqual(found_user.username,test_user.username)
+        self.assertEqual(found_user.userpassword,test_user.userpassword)
 
     def test_user_exists(self):
         '''

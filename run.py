@@ -32,7 +32,7 @@ def login_user(username,userpassword):
     """
     function that checks whether a user exist and then login the user in.
     """
-    check_user = User.verify_user(username,userpassword)
+    check_user = User.verify_user(username)
     return check_user
 
 def create_credentials(account,user,password):
@@ -115,13 +115,15 @@ def main():
         print('*' * 50)
         username = input("User name: ")
         userpassword = input("Password: ")
-        
-        login = login_user(username,userpassword)
-        if login_user == login:
-            print(f"Hello {username}.Welcome To PassWord Locker Manager")  
-            print('\n')  
 
-    while True:
+        login = login_user(username,userpassword)
+        if login_user == login: 
+            print(f"Hello {username}.Welcome To PassWord Locker Manager")  
+            print('\n') 
+        else:
+            print("Invalid password please try again")
+
+    while True:        
         print("What would you like to do?")
         print('\n')
         print("Use these short codes : cc - create a new credentials, dc - display credentials, fc -find a credential, ex -exit the credentials list ")
