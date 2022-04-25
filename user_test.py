@@ -74,7 +74,6 @@ class TestUser(unittest.TestCase):
         '''
         test to check if we can return a Boolean if we cannot find the user.
         '''
-
         self.new_user.save_user()
         test_user = User("UserName","UserPassword") # new user
         test_user.save_user()
@@ -87,7 +86,6 @@ class TestUser(unittest.TestCase):
         '''
         method that returns a list of all user saved
         '''
-
         self.assertEqual(User.display_user(),User.user_list)
 
 
