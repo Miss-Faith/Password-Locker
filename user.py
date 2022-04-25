@@ -42,17 +42,6 @@ class User:
             if user.username == username:
                 return user
 
-    def test_user_exists(self):
-        '''
-        test to check if we can return a Boolean if we cannot find the user.
-        '''
-
-        self.new_user.save_user()
-        test_user = User("UserName","UserPassword") # new user
-        test_user.save_user()
-
-        user_exists = User.user_exist("UserName")
-
-        self.assertTrue(user_exists)             
+            
     
     
