@@ -1,6 +1,7 @@
 import pyperclip
 import random
 import string
+
 class Password:
     """
     Create Password class that generates a new length of a password.
@@ -17,7 +18,7 @@ class Password:
         """
         A method that saves a new password instace into the password list
         """
-        Password.user_password.append(self)
+        Password.password_list.append(self)
 
 class Credentials:
     """

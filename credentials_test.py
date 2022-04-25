@@ -1,6 +1,36 @@
 import unittest
 from credentials import Credentials
+from credentials import Password
 import pyperclip
+
+class TestPassword(unittest.TestCase):
+
+    '''
+    Test class that defines test cases for the credentials class behaviours.
+
+    Args:
+        unittest.TestCase: TestCase class that helps in creating test cases
+    '''
+
+    def setUp(self):
+        '''
+        Set up method to run before each test cases.
+        '''
+        self.new_password = Password("7") # create password object
+
+    def test_init(self):
+        '''
+        test_init test case to test if the object is initialized properly
+        '''
+        self.assertEqual(self.new_password.passwordLength,"7")
+       
+
+    def test_save_password(self):
+        '''
+        test_save_credentials test case to test if the credentials object is saved into the credentials list
+        '''
+        self.new_password.save_password() # saving the new password
+        self.assertEqual(len(Password.password_list),1)
 
 class TestCredentials(unittest.TestCase):
 
@@ -21,7 +51,6 @@ class TestCredentials(unittest.TestCase):
         '''
         test_init test case to test if the object is initialized properly
         '''
-
         self.assertEqual(self.new_credentials.account,"GitHub")
         self.assertEqual(self.new_credentials.user_name,"Miss-Faith")
         self.assertEqual(self.new_credentials.password,"***")
