@@ -28,13 +28,18 @@ class User:
         User.user_list.remove(self)
 
     @classmethod
-    def verify_user(cls,username, userpassword):
-        """
-        method to verify whether the user is in our user_list or not
-        """
-        a_user = ""
-        for user in User.user_list:
-            if(user.username == username and user.password == password):
-                    a_user == user.username
-        return a_user
+    def verify_user(cls,username):
+        '''
+        Method that takes in the user name and returns user user that matches that account.
+
+        Args:
+            User: User name to search for
+        Returns :
+            User of account that matches the account name.
+        '''
+
+        for user in cls.user_list:
+            if user.username == username:
+                return user
+    
     

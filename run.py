@@ -92,7 +92,7 @@ def main():
             password_Choice = input().lower().strip()
 
             if password_Choice == 'tp':
-                password = input("Enter Password\n")
+                userpassword = input("Enter Password\n")
                 break
             elif password_Choice == 'gp':
                 print("Select Password length\n")
@@ -114,7 +114,8 @@ def main():
         print("Enter your User name and Password to log in:")
         print('*' * 50)
         username = input("User name: ")
-        userpassword = input("password: ")
+        userpassword = input("Password: ")
+        
         login = login_user(username,userpassword)
         if login_user == login:
             print(f"Hello {username}.Welcome To PassWord Locker Manager")  

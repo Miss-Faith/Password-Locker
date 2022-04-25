@@ -57,6 +57,19 @@ class TestUser(unittest.TestCase):
         self.new_user.delete_user()# Deleting a user object
         self.assertEqual(len(User.user_list),1) 
 
+    def test_verify_user(self):
+        '''
+        test to check if we can find a user by account and display information
+        '''
+
+        self.new_user.save_user()
+        test_user = User("UserName","UserPassword") # new user
+        test_user.save_user()
+
+        found_user = User.verify_user("UserName")
+
+        self.assertEqual(found_user.username,test_user.username)
+
 
 if __name__ == '__main__':
     unittest.main() 
