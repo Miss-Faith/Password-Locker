@@ -93,6 +93,12 @@ def generate_Password(passwordLength):
     auto_password=Credentials.generatePassword(passwordLength)
     return auto_password
 
+def copy_password(account):
+    """
+    A function that copies the password using the pyperclip framework
+    """
+    return Credentials.copy_password(account)
+
 def main():
     print("Hello Welcome to your Password Store...\n Please enter one of the following to proceed.\n CA ---  Create New Account  \n SI ---  Sign in to existing Account  \n")
     short_code=input("").lower().strip()
@@ -130,7 +136,6 @@ def main():
         print("*"*40)
 
     elif short_code == "si":
-        print("*"*40)
         print("Enter your User name and Password to log in:")
         print('*' * 40)
         username = input("User name: ")
@@ -141,11 +146,9 @@ def main():
             print(f"Hello {username}.Welcome To PassWord Locker Manager \n")  
             print('*' * 30)
         else:
-            print("Invalid password please try again")
+            print("Invalid password. \n We would ask you to please try again. \n However we are yet to set up a database to save user credentials.")
             print('*' * 30)
-    while True:
-        print(f"Hello and Welcome To PassWord Locker Manager \n")  
-        print('*' * 30)        
+    while True:        
         print("What would you like to do? \n")
         print('*' * 30)
         print('\n')
